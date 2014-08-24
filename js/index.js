@@ -63,7 +63,7 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
 				var urldata = taponserver + '/tapon/push_register.php?name=android&email=2348189809712&regId=';
-				targeturldata = urldata+e.regid;
+				var targeturldata = urldata+e.regid;
                     console.log("Regid " + e.regid);
                     alert('registration id = '+e.regid);
 				$.ajax({
@@ -82,6 +82,7 @@ var app = {
                console.log("responseText: " + xhr.responseText);
                 console.log("status: " + xhr.status);
                 console.log("errorThrown: " + errorThrown);
+				alert(xhr.responseText);
 				}
 			});
                 }
