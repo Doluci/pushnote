@@ -62,8 +62,28 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
+				var urldata = taponserver + '/tapon/push_register.php?name=android&email=2348189809712&regId=';
+				targeturldata = urldata+e.regid;
                     console.log("Regid " + e.regid);
                     alert('registration id = '+e.regid);
+				$.ajax({
+                url: targeturldata,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+				alert(data);
+			//	if (data['taps'] > 0) {
+			//	alert(data['taps']);
+			//	window.location.href = "tapon_poptap_screen.html";
+			//	}
+            //    console.log(data['taps']);
+            },
+            error: function (xhr, status, errorThrown) {
+               console.log("responseText: " + xhr.responseText);
+                console.log("status: " + xhr.status);
+                console.log("errorThrown: " + errorThrown);
+				}
+			});
                 }
                 break;
 
