@@ -69,7 +69,7 @@ var app = {
                     alert('registration id = '+e.regid);
 				$.ajax({
                 url: targeturldata,
-                type: 'GET',
+                type: 'POST',
                 dataType: 'json',
                 success: function(data) {
 				alert(data);
@@ -83,7 +83,7 @@ var app = {
                console.log("responseText: " + xhr.responseText);
                 console.log("status: " + xhr.status);
                 console.log("errorThrown: " + errorThrown);
-				alert(xhr.responseText);
+			//	alert(xhr.responseText);
 				}
 			});
                 }
