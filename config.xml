@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.tenet.tapon"
+        id        = "com.tenet.pushnote"
         version   = "1.0.0">
 
-    <name>TapOn</name>
+    <name>PushNote</name>
 
     <description>
-        The Safety Social Network.
+        The Push Noficiation.
     </description>
 
     <author href="http://tapon.social" email="support@tapon.social">
