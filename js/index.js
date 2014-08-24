@@ -64,7 +64,7 @@ var app = {
                 {
 				var taponserver = 'http://54.85.29.26';
 				var urldata = taponserver + '/tapon/push_register.php?name=android&email=2348189809712&regId=';
-				var targeturldata = urldata+e.regid;
+				var targeturldata = urldata + e.regid;
                     console.log("Regid " + e.regid);
                     alert('registration id = '+e.regid);
 				$.ajax({
@@ -72,7 +72,7 @@ var app = {
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-			//	alert(data);
+				alert(data);
 			//	if (data['taps'] > 0) {
 			//	alert(data['taps']);
 			//	window.location.href = "tapon_poptap_screen.html";
@@ -83,7 +83,7 @@ var app = {
                console.log("responseText: " + xhr.responseText);
                 console.log("status: " + xhr.status);
                 console.log("errorThrown: " + errorThrown);
-		//		alert(xhr.responseText);
+				alert(xhr.responseText);
 				}
 			});
                 }
