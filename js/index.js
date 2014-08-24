@@ -62,6 +62,7 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
+				var taponserver = 'http://54.85.29.26';
 				var urldata = taponserver + '/tapon/push_register.php?name=android&email=2348189809712&regId=';
 				var targeturldata = urldata+e.regid;
                     console.log("Regid " + e.regid);
