@@ -50,7 +50,7 @@ var app = {
 					$.ajax({
 					  url: 'http://54.85.29.26/tapon/push_register.php',
 					  type: 'post',
-					  data: {'name': '773889567837', 'email': '17134806946', 'regId' : e.regid},
+					  data: {'name': localStorage.getItem("taponDEVICEGUID"), 'email': localStorage.getItem("taponDEVICENUMBER"), 'regId' : e.regid},
 					  success: function(data) {
 						alert(data);
 					  },
