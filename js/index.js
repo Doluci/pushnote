@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
+        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"17134806946","ecb":"app.onNotificationGCM"});
 
     },
     // Update DOM on a Received Event
@@ -68,7 +68,7 @@ var app = {
 					$.ajax({
 					  url: 'http://54.85.29.26/tapon/push_register.php',
 					  type: 'post',
-					  data: {'name': 'android', 'email': '17134806946', 'regId' : e.regid},
+					  data: {'name': '17134806946', 'email': '17134806946', 'regId' : e.regid},
 					  success: function(data) {
 						alert(data);
 					  },
