@@ -70,7 +70,7 @@ var app = {
 					  type: 'post',
 					  data: {'name': 'android', 'email': '17134806946', 'regId' : e.regid},
 					  success: function(data) {
-				//		alert(data);
+						alert(data);
 					  },
 					  error: function(xhr, desc, err) {
 						console.log(xhr);
