@@ -62,30 +62,23 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-				var taponserver = 'http://54.85.29.26';
-				var urldata = taponserver + '/tapon/push_register.php?name=android&email=2348189809712&regId=';
-				var targeturldata = urldata + e.regid;
-                    console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
-				$.ajax({
-                url: targeturldata,
-                type: 'POST',
-                dataType: 'json',
-                success: function(data) {
-				alert(data);
-			//	if (data['taps'] > 0) {
-			//	alert(data['taps']);
-			//	window.location.href = "tapon_poptap_screen.html";
-			//	}
-            //    console.log(data['taps']);
-            },
-            error: function (xhr, status, errorThrown) {
-               console.log("responseText: " + xhr.responseText);
-                console.log("status: " + xhr.status);
-                console.log("errorThrown: " + errorThrown);
-			//	alert(xhr.responseText);
-				}
-			});
+				console.log("Regid " + e.regid);
+                alert('registration id = '+e.regid);
+				
+					$.ajax({
+					  url: 'http://54.85.29.26/tapon/push_register.php',
+					  type: 'post',
+					  data: {'name': 'android', 'email': '17134806946', 'regId' : e.regid},
+					  success: function(data) {
+				//		alert(data);
+					  },
+					  error: function(xhr, desc, err) {
+						console.log(xhr);
+						console.log("Details: " + desc + "\nError:" + err);
+					//	alert('ERROR');
+					  }
+					}); // end ajax call
+				
                 }
                 break;
 
