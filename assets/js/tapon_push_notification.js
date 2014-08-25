@@ -1,7 +1,8 @@
-var app = {
-    // Application Constructor
+var push = {
+    // pushlication Constructor
     initialize: function() {
         this.bindEvents();
+		alert('initialized');
     },
     // Bind Event Listeners
     //
@@ -9,16 +10,17 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		alert('events bound');
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // function, we must explicity call 'push.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        push.receivedEvent('deviceready');
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"773889567837","ecb":"app.onNotificationGCM"});
-
+        pushNotification.register(push.successHandler, push.errorHandler,{"senderID":"773889567837","ecb":"push.onNotificationGCM"});
+	alert('device now ready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -30,6 +32,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+		alert('Received Event: ' + id);
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
@@ -50,9 +53,9 @@ var app = {
 					$.ajax({
 					  url: 'http://54.85.29.26/tapon/push_register.php',
 					  type: 'post',
-					  data: {'name': '773889567837', 'email': '17134806946', 'regId' : e.regid},
+					  data: {'name': localStorage.getItem("taponDEVICEGUID"), 'email': localStorage.getItem("taponDEVICENUMBER"), 'regId' : e.regid},
 					  success: function(data) {
-						alert(data);
+					//	alert(data);
 					  },
 					  error: function(xhr, desc, err) {
 						console.log(xhr);
